@@ -31,6 +31,7 @@ local function createStartBackLayer()
 	local playButton = createAtlasSprite("button_play")
 	playButton:setPosition(cc.p(visibleSize.width / 4, visibleSize.height / 2 - 120))
 	backLayer:addChild(playButton, 1000)
+	-- local menu = cc.Menu:
 
 	-- rank button
 	local rankButton = createAtlasSprite("button_score")

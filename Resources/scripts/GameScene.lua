@@ -127,6 +127,7 @@ local function showGameOverLayer()
         end
 
         local function showScoreNumber()
+            haveANewScore(10)
             --CreateSpriteScore(nowScoreNode, totalScore, 2, 2)
             CreateSpriteScore(bestScoreNode, 28, 2, 2)
 

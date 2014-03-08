@@ -246,8 +246,6 @@ function onCommonMenuLayerTouchBegan(touch, event)
 
     if g_playButton ~= nil then
         checkMenuButton(g_playButton, "button_play", touchBeginPoint)
-
-        
     end
 
     if g_rankButton ~= nil then
@@ -329,4 +327,16 @@ function CreateSpriteScore(rootNode, score, size, alignType)
         nowOffset = nowOffset - distance
     end
 
+end
+
+function haveANewScore(newScore)
+    if io.exists("gameData.lua") then
+        --
+        print("gameDala not null")
+    end
+    print("gameDala  null")
+    local dataFile = io.open("StartScene.lua","r")
+    for line in dataFile:lines() do
+         print("line:"..line)
+     end 
 end

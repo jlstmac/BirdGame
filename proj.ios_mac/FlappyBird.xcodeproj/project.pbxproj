@@ -100,6 +100,10 @@
 		A55DD5E018AB752800D0F4D3 /* scripts in Resources */ = {isa = PBXBuildFile; fileRef = A55DD5DB18AB752800D0F4D3 /* scripts */; };
 		A55DD5E118AB752800D0F4D3 /* scripts in Resources */ = {isa = PBXBuildFile; fileRef = A55DD5DB18AB752800D0F4D3 /* scripts */; };
 		D6B061351803AC000077942B /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B061341803AC000077942B /* CoreMotion.framework */; };
+		E943EB3F18CCB2F1006C57CC /* iPhoneHD in Resources */ = {isa = PBXBuildFile; fileRef = E943EB3E18CCB2F1006C57CC /* iPhoneHD */; };
+		E943EB4318CCB546006C57CC /* iPad in Resources */ = {isa = PBXBuildFile; fileRef = E943EB4018CCB546006C57CC /* iPad */; };
+		E943EB4418CCB546006C57CC /* iPadHD in Resources */ = {isa = PBXBuildFile; fileRef = E943EB4118CCB546006C57CC /* iPadHD */; };
+		E943EB4518CCB546006C57CC /* iPhone in Resources */ = {isa = PBXBuildFile; fileRef = E943EB4218CCB546006C57CC /* iPhone */; };
 		F293B3CD15EB7BE500256477 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F293B3CC15EB7BE500256477 /* QuartzCore.framework */; };
 		F293B3D115EB7BE500256477 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F293B3D015EB7BE500256477 /* OpenAL.framework */; };
 		F293B3D315EB7BE500256477 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F293B3D215EB7BE500256477 /* AudioToolbox.framework */; };
@@ -272,6 +276,10 @@
 		A55DD5DA18AB752800D0F4D3 /* res */ = {isa = PBXFileReference; lastKnownFileType = folder; path = res; sourceTree = "<group>"; };
 		A55DD5DB18AB752800D0F4D3 /* scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = scripts; sourceTree = "<group>"; };
 		D6B061341803AC000077942B /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/CoreMotion.framework; sourceTree = DEVELOPER_DIR; };
+		E943EB3E18CCB2F1006C57CC /* iPhoneHD */ = {isa = PBXFileReference; lastKnownFileType = folder; name = iPhoneHD; path = ../Resources/iPhoneHD; sourceTree = "<group>"; };
+		E943EB4018CCB546006C57CC /* iPad */ = {isa = PBXFileReference; lastKnownFileType = folder; name = iPad; path = ../Resources/iPad; sourceTree = "<group>"; };
+		E943EB4118CCB546006C57CC /* iPadHD */ = {isa = PBXFileReference; lastKnownFileType = folder; name = iPadHD; path = ../Resources/iPadHD; sourceTree = "<group>"; };
+		E943EB4218CCB546006C57CC /* iPhone */ = {isa = PBXFileReference; lastKnownFileType = folder; name = iPhone; path = ../Resources/iPhone; sourceTree = "<group>"; };
 		F293B3C815EB7BE500256477 /* FlappyBird iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FlappyBird iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F293B3CC15EB7BE500256477 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		F293B3CE15EB7BE500256477 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -432,6 +440,10 @@
 		F293B3BD15EB7BE500256477 = {
 			isa = PBXGroup;
 			children = (
+				E943EB4018CCB546006C57CC /* iPad */,
+				E943EB4118CCB546006C57CC /* iPadHD */,
+				E943EB4218CCB546006C57CC /* iPhone */,
+				E943EB3E18CCB2F1006C57CC /* iPhoneHD */,
 				15A8A4031834BDA200142BE0 /* cocos2d_libs.xcodeproj */,
 				5023810617EBBCAC00990C9B /* ios */,
 				5023817117EBBE3400990C9B /* mac */,
@@ -710,6 +722,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E943EB4318CCB546006C57CC /* iPad in Resources */,
+				E943EB4418CCB546006C57CC /* iPadHD in Resources */,
+				E943EB4518CCB546006C57CC /* iPhone in Resources */,
+				E943EB3F18CCB2F1006C57CC /* iPhoneHD in Resources */,
 				15A8A46E1834C6AD00142BE0 /* DeprecatedClass.lua in Resources */,
 				15A8A4491834C64F00142BE0 /* Icon-114.png in Resources */,
 				5023811D17EBBCAC00990C9B /* Icon-120.png in Resources */,
@@ -766,7 +782,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "touch \"/Users/jlstmac/Documents/Dev/OpenBird-master/Resources/scripts\"";
+			shellScript = "touch \"/Users/jlstmac/Documents/Dev/BirdGame/Resources/scripts\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 

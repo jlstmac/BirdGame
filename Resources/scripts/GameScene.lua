@@ -127,9 +127,8 @@ local function showGameOverLayer()
         end
 
         local function showScoreNumber()
-            haveANewScore(10)
-            --CreateSpriteScore(nowScoreNode, totalScore, 2, 2)
-            CreateSpriteScore(bestScoreNode, 28, 2, 2)
+            local newScore = haveANewScore(totalScore)
+            CreateSpriteScore(bestScoreNode, newScore, 2, 2)
 
             local tmpScore = 0
             local showSingleNumberFunc = 0

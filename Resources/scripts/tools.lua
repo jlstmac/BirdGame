@@ -330,13 +330,22 @@ function CreateSpriteScore(rootNode, score, size, alignType)
 end
 
 function haveANewScore(newScore)
-    if io.exists("gameData.lua") then
-        --
-        print("gameDala not null")
+    local pRet = 0
+    local userDefaults =  cc.UserDefault:getInstance()
+    local launchedBefore = userDefaults:getBoolForKey("launchedBefore")
+    if launchedBefore == false then
+        userDefaults:setBoolForKey("launchedBefore", true)
+        userDefaults:setIntegerForKey("bestScore", newScore)
+        userDefaults:flush()
+        pRet = 0
+    else
+        local oldScore = userDefaults:getIntegerForKey("bestScore", 0)
+        pRet = oldScore
+        if (newScore > oldScore) then
+            userDefaults:setIntegerForKey("bestScore", newScore)
+            userDefaults:flush()
+        end
     end
-    print("gameDala  null")
-    local dataFile = io.open("StartScene.lua","r")
-    for line in dataFile:lines() do
-         print("line:"..line)
-     end 
+    
+    return pRet
 end

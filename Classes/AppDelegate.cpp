@@ -23,9 +23,9 @@ bool AppDelegate::applicationDidFinishLaunching()
 
 //    EGLView::getInstance()->setDesignResolutionSize(288, 512, ResolutionPolicy::EXACT_FIT);
     EGLView::getInstance()->setDesignResolutionSize(480*2, 320*2, ResolutionPolicy::NO_BORDER);
-    std::vector<std::string> searchPath = CCFileUtils::getInstance()->getSearchPaths();
+    std::vector<std::string> searchPath = FileUtils::getInstance()->getSearchPaths();
     searchPath.push_back("iPhoneHD");
-    CCFileUtils::getInstance()->setSearchPaths(searchPath);
+    FileUtils::getInstance()->setSearchPaths(searchPath);
 
     // turn on display FPS
     director->setDisplayStats(false);

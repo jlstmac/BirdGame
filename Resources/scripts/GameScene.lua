@@ -15,8 +15,8 @@ local pipeDistance = 100
 
 local landHeight = 90
 
-local tapV = 260
-local systemGravity = -900
+local tapV = 490
+local systemGravity = -1200
 --config end
 
 -- vars
@@ -104,7 +104,7 @@ local function showGameOverLayer()
 
     local function showOverItems()
         local function showGameOverLogo()
-            cc.SimpleAudioEngine:getInstance():playEffect(uiPath)
+            playEffectByName(uiPath)
             scoreNode:setVisible(false)
 
             gameOverLogo:setVisible(true)
@@ -117,7 +117,7 @@ local function showGameOverLayer()
         end
 
         local function showScorePanel()
-            cc.SimpleAudioEngine:getInstance():playEffect(uiPath)
+            playEffectByName(uiPath)
             scorePanel:setVisible(true)
 
             local place = cc.Place:create(cc.p(midX, -100))
@@ -323,7 +323,7 @@ local function createLayerBg()
 	local function GameOver()
         gameOver = true
 
-		cc.SimpleAudioEngine:getInstance():playEffect(hitPath)
+		playEffectByName(hitPath)
 
 		for i = 1, pipeCount do
 			pipes[i]:stopAllActions()
@@ -365,13 +365,13 @@ local function createLayerBg()
  --            if math.abs(pipes[i]:getPositionX() - birdX) < (birdSize + 26) then
  --                -- check down
  --                if spriteBird:getPositionY() < pipes[i]:getPositionY() + pipeHeight / 2 + birdSize then
-                    -- cc.SimpleAudioEngine:getInstance():playEffect(fallPath)
+                    -- playEffectByName(fallPath)
                     -- GameOver()
                     -- return 
  --                end
  --                -- check up
  --                if spriteBird:getPositionY() > pipes[i]:getPositionY() + pipeHeight / 2 + pipeDistance - birdSize then
- --                    cc.SimpleAudioEngine:getInstance():playEffect(fallPath)
+ --                    playEffectByName(fallPath)
  --                    GameOver()
  --                    return
  --                end
@@ -380,7 +380,7 @@ local function createLayerBg()
  --            if pipeState[i] == PIPE_NEW and pipes[i]:getPositionX() < birdX then
  --                pipeState[i] = PIPE_PASS
  --                totalScore = totalScore + 1
- --                cc.SimpleAudioEngine:getInstance():playEffect(scorePath)
+ --                playEffectByName(scorePath)
  --                refreshScore()
  --                return
  --            end
@@ -421,7 +421,7 @@ local function createLayerBg()
             local pipeRect = cc.rect(pipes[i]:getPositionX() - pipeSize.width/2,pipes[i]:getPositionY() - pipeSize.height, pipeSize.width, pipeSize.height)
 
             if ourIntersectsCercle(cc.p(spriteBird:getPositionX(),spriteBird:getPositionY()), birdSize.width,cc.p(pipes[i]:getPositionX(),pipes[i]:getPositionY()), pipeSize.width) then
-                cc.SimpleAudioEngine:getInstance():playEffect(fallPath)
+                playEffectByName(fallPath)
                 GameOver()
                 return 
             end
@@ -430,7 +430,7 @@ local function createLayerBg()
             if pipeState[i] == PIPE_NEW and pipes[i]:getPositionX() < birdX then
                 pipeState[i] = PIPE_PASS
                 totalScore = totalScore + 1
-                cc.SimpleAudioEngine:getInstance():playEffect(scorePath)
+                playEffectByName(scorePath)
                 refreshScore()
                 return
             end
@@ -465,7 +465,7 @@ local function createLayerBg()
         end
 
 
-        cc.SimpleAudioEngine:getInstance():playEffect(wingPath)
+        playEffectByName(wingPath)
 
          -- CCTOUCHBEGAN event must return true
         return true

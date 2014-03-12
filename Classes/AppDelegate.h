@@ -2,6 +2,21 @@
 #define __APP_DELEGATE_H__
 
 #include "cocos2d.h"
+USING_NS_CC;
+
+//typedef struct tagResource
+//{
+//    Size size;
+//    char directory[100];
+//}Resource;
+//
+//static Resource iPhoneResource  =  { Size(480, 320),   "iPhone" };
+//static Resource iPhoneHDResource   =  { Size(480*2, 320*2),   "iPhoneHD" };
+//static Resource iPhoneTallerResource = { Size(1136, 640),    "iPhoneTaller"};
+//static Resource iPadResource =  { Size(1024, 768),  "iPad"   };
+//static Resource iPadHDResource  =  { Size(2048, 1536), "iPadHD" };
+//static Size designResolutionSize = Size(480, 320);
+//static Size designTallerResolutionSize = Size(568, 320);
 
 /**
 @brief    The cocos2d Application.

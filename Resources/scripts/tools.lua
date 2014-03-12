@@ -18,6 +18,8 @@ g_rateButton = nil
 g_playButton = nil
 g_rankButton = nil
 
+g_soundButtonItem = nil
+
 cc.FileUtils:getInstance():addSearchPath("res/")
 local textureAtlas = cc.Director:getInstance():getTextureCache():addImage("atlas.png")
 
@@ -121,9 +123,28 @@ function createCommonBackLayer()
         bgName = "bg_night"
     end
 
+    -- sun sprite
     local sun = cc.Sprite:create("sun@2x.png")
     sun:setPosition(ccp(visibleSize.width*0.6, visibleSize.height*0.88))
     layerBg:addChild(sun,101)
+
+    -- sound button
+    -- local itemOn = cc.MenuItemImage:create("sound_on@2x.png", "sound_on@2x.png")
+    -- local itemOff = cc.MenuItemImage:create("sound_off@2x.png", "sound_off@2x.png")
+
+    local function soundSettingButton()
+        local isOn = getSettingState()
+        changeTheSoundButton(not isOn)
+    end
+
+    g_soundButtonItem = cc.MenuItemImage:create("sound_on@2x.png", "sound_off@2x.png")
+    g_soundButtonItem:registerScriptTapHandler(soundSettingButton)
+    local soundMenu = cc.Menu:create()
+    soundMenu:addChild(g_soundButtonItem)
+    layerBg:addChild(soundMenu,101)
+    soundMenu:setPosition(ccp(visibleSize.width*0.08, visibleSize.height*0.94))
+
+    changeTheSoundButton(getSettingState())
 
     local scoreLable = cc.Sprite:create("cha_score@2x.png")
     scoreLable:setPosition(cc.p(visibleSize.width*0.8, visibleSize.height*0.94))
@@ -278,7 +299,7 @@ function onCommonMenuLayerTouchEnded(touch, event)
             end
             local trans = cc.TransitionFade:create(0.5, gameScene, cc.c3b(0,0,0))
             cc.Director:getInstance():replaceScene(trans)
-            cc.SimpleAudioEngine:getInstance():playEffect(uiPath)
+            playEffectByName(uiPath)
         elseif clickedButton == g_rankButton then
 
         end
@@ -348,4 +369,40 @@ function haveANewScore(newScore)
     end
     
     return pRet
+end
+
+
+function changeSettingState(isSoundON)
+    local userDefaults =  cc.UserDefault:getInstance()
+    local launchedBefore = userDefaults:setBoolForKey("isSoundOn", isSoundON)
+    userDefaults:flush()
+end
+
+function getSettingState()
+    local pRet = true
+    local userDefaults =  cc.UserDefault:getInstance()
+    local launchedBefore = userDefaults:getBoolForKey("launchedBefore")
+    if launchedBefore == false then
+        local launchedBefore = userDefaults:setBoolForKey("isSoundOn", true)
+        userDefaults:flush()
+        pRet = true
+    else
+        pRet = userDefaults:getBoolForKey("isSoundOn")
+    end
+    return pRet
+end
+
+function changeTheSoundButton(isOn)
+    if isOn then
+        g_soundButtonItem:unselected()
+    else
+        g_soundButtonItem:selected()
+    end
+    changeSettingState(isOn)
+end
+
+function playEffectByName(name)
+    if getSettingState() == true then
+        cc.SimpleAudioEngine:getInstance():playEffect(name)
+    end
 end

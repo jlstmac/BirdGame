@@ -25,9 +25,8 @@ bool AppDelegate::applicationDidFinishLaunching()
 //    EGLView::getInstance()->setDesignResolutionSize(288, 512, ResolutionPolicy::EXACT_FIT);
 
     if (frameSize.height == 640 && frameSize.width == 1136){
-        CCLOG("1111");
         EGLView::getInstance()->setDesignResolutionSize(1136, 640, ResolutionPolicy::NO_BORDER);
-    }else{CCLOG("2222");
+    }else{
         EGLView::getInstance()->setDesignResolutionSize(960, 640, ResolutionPolicy::NO_BORDER);
     }
     std::vector<std::string> searchPath = FileUtils::getInstance()->getSearchPaths();

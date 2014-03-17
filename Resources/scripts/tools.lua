@@ -23,10 +23,15 @@ g_soundButtonItem = nil
 cc.FileUtils:getInstance():addSearchPath("res/")
 local textureAtlas = cc.Director:getInstance():getTextureCache():addImage("atlas.png")
 
-wingPath = cc.FileUtils:getInstance():fullPathForFilename("sfx_wing.wav")
+-- wingPath = cc.FileUtils:getInstance():fullPathForFilename("sfx_wing.wav")
+-- hitPath = cc.FileUtils:getInstance():fullPathForFilename("sfx_hit.wav")
+-- scorePath = cc.FileUtils:getInstance():fullPathForFilename("sfx_point.wav")
+-- fallPath = cc.FileUtils:getInstance():fullPathForFilename("sfx_die.wav")
+-- uiPath = cc.FileUtils:getInstance():fullPathForFilename("sfx_swooshing.wav")
+wingPath = cc.FileUtils:getInstance():fullPathForFilename("key1.m4a")
 hitPath = cc.FileUtils:getInstance():fullPathForFilename("sfx_hit.wav")
-scorePath = cc.FileUtils:getInstance():fullPathForFilename("sfx_point.wav")
-fallPath = cc.FileUtils:getInstance():fullPathForFilename("sfx_die.wav")
+scorePath = cc.FileUtils:getInstance():fullPathForFilename("m1.m4a")
+fallPath = cc.FileUtils:getInstance():fullPathForFilename("failure.m4a")
 uiPath = cc.FileUtils:getInstance():fullPathForFilename("sfx_swooshing.wav")
 
 cc.SimpleAudioEngine:getInstance():preloadEffect(wingPath)

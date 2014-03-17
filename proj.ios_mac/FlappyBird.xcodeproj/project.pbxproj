@@ -14,7 +14,7 @@
 		01A8D335187A504A001CC002 /* GuiConstants.lua in Resources */ = {isa = PBXBuildFile; fileRef = 01A8D330187A504A001CC002 /* GuiConstants.lua */; };
 		01A8D336187A504A001CC002 /* GuiConstants.lua in Resources */ = {isa = PBXBuildFile; fileRef = 01A8D330187A504A001CC002 /* GuiConstants.lua */; };
 		15A8A4441834C43700142BE0 /* libchipmunk iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 15A8A4291834BDA200142BE0 /* libchipmunk iOS.a */; settings = {ATTRIBUTES = (Weak, ); }; };
-		15A8A4451834C43700142BE0 /* libcocos2dx iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 15A8A4251834BDA200142BE0 /* libcocos2dx iOS.a */; };
+		15A8A4451834C43700142BE0 /* libcocos2dx iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 15A8A4251834BDA200142BE0 /* libcocos2dx iOS.a */; settings = {ATTRIBUTES = (Weak, ); }; };
 		15A8A4461834C43700142BE0 /* libcocos2dx-extensions iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 15A8A4271834BDA200142BE0 /* libcocos2dx-extensions iOS.a */; };
 		15A8A4471834C43700142BE0 /* libCocosDenshion iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 15A8A42D1834BDA200142BE0 /* libCocosDenshion iOS.a */; };
 		15A8A4481834C43700142BE0 /* libluabindings iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 15A8A4311834BDA200142BE0 /* libluabindings iOS.a */; };
@@ -955,7 +955,7 @@
 				PROVISIONING_PROFILE = "";
 				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = YES;
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../cocos2d/cocos $(SRCROOT)/../cocos2d/cocos/base $(SRCROOT)/../cocos2d/cocos/2d $(SRCROOT)/../cocos2d/cocos/physics $(SRCROOT)/../cocos2d/cocos/math/kazmath/include $(SRCROOT)/../cocos2d/cocos/2d/platform/ios $(SRCROOT)/../cocos2d/cocos/audio/include $(SRCROOT)/../cocos2d/cocos/editor-support $(SRCROOT)/../cocos2d/cocos/gui $(SRCROOT)/../cocos2d/external/chipmunk/include/chipmunk $(SRCROOT)/../cocos2d/external $(SRCROOT)/../cocos2d/cocos/scripting/lua/bindings $(SRCROOT)/../cocos2d/external/lua/luajit/include $(SRCROOT)/../cocos2d/external/lua/tolua";
 			};
 			name = Debug;
@@ -980,7 +980,7 @@
 				PROVISIONING_PROFILE = "";
 				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = YES;
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../cocos2d/cocos $(SRCROOT)/../cocos2d/cocos/base $(SRCROOT)/../cocos2d/cocos/2d $(SRCROOT)/../cocos2d/cocos/physics $(SRCROOT)/../cocos2d/cocos/math/kazmath/include $(SRCROOT)/../cocos2d/cocos/2d/platform/ios $(SRCROOT)/../cocos2d/cocos/audio/include $(SRCROOT)/../cocos2d/cocos/editor-support $(SRCROOT)/../cocos2d/cocos/gui $(SRCROOT)/../cocos2d/external/chipmunk/include/chipmunk $(SRCROOT)/../cocos2d/external $(SRCROOT)/../cocos2d/cocos/scripting/lua/bindings $(SRCROOT)/../cocos2d/external/lua/luajit/include $(SRCROOT)/../cocos2d/external/lua/tolua";
 			};
 			name = Release;

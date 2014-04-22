@@ -28,9 +28,11 @@
 #import "AppDelegate.h"
 
 #import "RootViewController.h"
+#import "iOSTools.h"
+#import "TapperController.h"
 
 @implementation AppController
-
+@synthesize tcViewController;
 #pragma mark -
 #pragma mark Application lifecycle
 
@@ -42,7 +44,8 @@ static AppDelegate s_sharedApplication;
     // Override point for customization after application launch.
 
     // Add the view controller's view to the window and display.
-    window = [[UIWindow alloc] initWithFrame: [[UIScreen mainScreen] bounds]];
+    CGRect winRect = [[UIScreen mainScreen] bounds];
+    window = [[UIWindow alloc] initWithFrame: winRect];
     CCEAGLView *__glView = [CCEAGLView viewWithFrame: [window bounds]
                                      pixelFormat: kEAGLColorFormatRGBA8
                                      depthFormat: GL_DEPTH_COMPONENT16
@@ -72,8 +75,30 @@ static AppDelegate s_sharedApplication;
     [window makeKeyAndVisible];
 
     [[UIApplication sharedApplication] setStatusBarHidden: YES];
-
+    
     cocos2d::Application::getInstance()->run();
+    
+    //ADView
+    CGRect rect = CGRectMake(0, 320 - 32, 0, 0);
+    adView = [[ADBannerView alloc] initWithFrame:rect];
+	adView.currentContentSizeIdentifier = ADBannerContentSizeIdentifierLandscape;
+	[viewController.view addSubview:adView];
+	adView.delegate = self;
+	adView.hidden = YES;
+    
+	adView.requiredContentSizeIdentifiers = [NSSet setWithObjects: ADBannerContentSizeIdentifierPortrait, ADBannerContentSizeIdentifierLandscape, nil];
+    
+    //LeaderBoard
+//    if ([iOSTools isGameCenterAvailable]) {
+//        [iOSTools authenticateLocalPlayer];
+//    }
+    
+    tcViewController = [[TapperController alloc] init];
+    [tcViewController.gameCenterManager authenticateLocalUser];
+//    [window addSubview: tcViewController.view];
+    [tcViewController showLeaderboard];
+//    leaderBoard.
+    
     return YES;
 }
 
@@ -131,6 +156,26 @@ static AppDelegate s_sharedApplication;
     [super dealloc];
 }
 
+//***ADView
+-(void)bannerViewWillLoadAd:(ADBannerView *)banner{NSLog(@"vill load");}
+-(void)bannerViewDidLoadAd:(ADBannerView *)banner{
+    NSLog(@"%d",adView.bannerLoaded);
+	adView.hidden = NO;
+	NSLog(@"did load");
+}
+-(void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error{
+    NSLog(@"error:%@",error);
+}
+-(BOOL)bannerViewActionShouldBegin:(ADBannerView *)banner willLeaveApplication:(BOOL)willLeave{
+    NSLog(@"should begin");
+	return YES;
+}
+-(void)bannerViewActionDidFinish:(ADBannerView *)banner{NSLog(@"did finish");}
 
+- (void)leaderboardViewControllerDidFinish:(GKLeaderboardViewController *)viewController{
+    
+}
 @end
+
+
 

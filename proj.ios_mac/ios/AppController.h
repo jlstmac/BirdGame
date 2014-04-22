@@ -21,13 +21,17 @@
  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  THE SOFTWARE.
  ****************************************************************************/
+#import <iAd/iAd.h>
 
 @class RootViewController;
+@class TapperController;
 
-@interface AppController : NSObject <UIAccelerometerDelegate, UIAlertViewDelegate, UITextFieldDelegate,UIApplicationDelegate> {
+@interface AppController : NSObject <UIAccelerometerDelegate, UIAlertViewDelegate, UITextFieldDelegate,UIApplicationDelegate, ADBannerViewDelegate> {
     UIWindow *window;
     RootViewController    *viewController;
+    ADBannerView *adView;
+    TapperController* tcViewController;
 }
-
+@property (nonatomic, retain) TapperController *tcViewController;
 @end
 

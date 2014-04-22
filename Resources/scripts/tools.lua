@@ -122,11 +122,9 @@ end
 function createCommonBackLayer()
     local layerBg = cc.Layer:create()
 
-    local randomBgIndex = math.random(1, 2)
-    local bgName = "bg_day"
-    if randomBgIndex == 2 then
-        bgName = "bg_night"
-    end
+    local randomBgIndex = math.random(1, 4)
+    local bgName = "bg_" .. randomBgIndex .. ".png"
+    print("banem::%s",bgName)
 
     -- sun sprite
     local sun = cc.Sprite:create("sun@2x.png")
@@ -146,16 +144,16 @@ function createCommonBackLayer()
     g_soundButtonItem:registerScriptTapHandler(soundSettingButton)
     local soundMenu = cc.Menu:create()
     soundMenu:addChild(g_soundButtonItem)
-    layerBg:addChild(soundMenu,101)
+    layerBg:addChild(soundMenu,1110)
     soundMenu:setPosition(ccp(visibleSize.width*0.08, visibleSize.height*0.94))
 
     changeTheSoundButton(getSettingState())
 
     local scoreLable = cc.Sprite:create("cha_score@2x.png")
     scoreLable:setPosition(cc.p(visibleSize.width*0.8, visibleSize.height*0.94))
-    layerBg:addChild(scoreLable,101)
+    layerBg:addChild(scoreLable,1110)
     -- first moving land
-    local landPosY = -visibleSize.height*0.08
+    local landPosY = -visibleSize.height*0.02
     local land_1 = cc.Sprite:create("curve_land@2x.png")
     local contentSize = land_1:getContentSize()
     land_1:setAnchorPoint(cc.p(0.5,0))
@@ -177,7 +175,7 @@ function createCommonBackLayer()
     land_2:runAction(cc.RepeatForever:create(cc.Sequence:create(move2, reset2)))
 
     -- first moving bg
-    local bg_1 = cc.Sprite:create("bg_light_3@2x.png")
+    local bg_1 = cc.Sprite:create(bgName)
     local contentSizeBg = bg_1:getContentSize()
     bg_1:setAnchorPoint(cc.p(0.5,0))
     bg_1:setPosition(contentSizeBg.width / 2, 0)
@@ -188,7 +186,7 @@ function createCommonBackLayer()
     bg_1:runAction(cc.RepeatForever:create(cc.Sequence:create(bgmove1, bgreset1)))
 
     -- second moving bg
-    local bg_2 = cc.Sprite:create("bg_light_3@2x.png")
+    local bg_2 = cc.Sprite:create(bgName)
     bg_2:setAnchorPoint(cc.p(0.5,0))
     bg_2:setPosition(contentSizeBg.width * 3 / 2, 0)
     layerBg:addChild(bg_2, 50)
@@ -218,7 +216,7 @@ function createCommonBackLayer()
     cloud_2:setPosition(cc.p(cloudwidth2 * 3 / 2, cloudPosY))
     layerBg:addChild(cloud_2, 102)
 
-    local bgmove2 = cc.MoveTo:create(g_cloudMoveTime, cc.p(-3*cloudwidth2 , cloudPosY))
+    local bgmove2 = cc.MoveTo:create(g_cloudMoveTime + 100, cc.p(-3*cloudwidth2 , cloudPosY))
     local bgreset2 = cc.Place:create(cc.p(cloudwidth2 * 3 / 2, cloudPosY))
     cloud_2:runAction(cc.RepeatForever:create(cc.Sequence:create(bgmove2, bgreset2)))
 

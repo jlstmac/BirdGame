@@ -9,13 +9,13 @@ local midY = visibleSize.height / 2
 local birdX = 90
 local birdSize = 20
 
-local pipeCount = 5
+local pipeCount = 6
 local pipeHeight = 320
 local pipeDistance = 100
 
-local landHeight = 90
+local landHeight = 120
 
-local tapV = 490
+local tapV = 390
 local systemGravity = -1200
 --config end
 
@@ -185,7 +185,6 @@ local function createPipes(layer)
 			-- local singlePipe = cc.Node:create()
 			-- singlePipe:addChild(downPipe)
 			-- singlePipe:addChild(upPipe)
-
 			-- singlePipe:setPosition(cc.p(- visibleSize.width * 2, 0))
 
 			-- layer:addChild(singlePipe, 10)
@@ -197,35 +196,59 @@ local function createPipes(layer)
    --  end
 
     local function initPipe()
+        local bufPipe = {}
         for i = 1, pipeCount do
-            -- local downPipe = createAtlasSprite("pipe_down")
-            -- local upPipe = createAtlasSprite("pipe_up")
-            local randomNum = math.random(6,8)
-            local randomPos = math.random(1,3)
-            local pipeSprite = cc.Sprite:create("cloud_"..randomNum.."@2x.png")
-            pipeSprite:setPosition(cc.p(- visibleSize.width * 2, 150*randomPos))
+            local num = math.floor((i - 1)/2 + 1)
+            local pipeSprite = cc.Sprite:create("cloud_"..num.."@2x.png")
+
+            bufPipe[i] = pipeSprite
+        end
+
+        for i = 1, pipeCount do
+            local tableSize = table.getn(bufPipe)
+            local rp = math.random(1,tableSize)
+            print("ranp:"..rp)
+            -- print("size:"..tableSize)
+            local pipeSprite = table.remove(bufPipe,rp)
+            
+            
+            pipeSprite:setPosition(cc.p(- visibleSize.width * 2, -1000.0))
 
             layer:addChild(pipeSprite, 200)
 
             pipes[i] = pipeSprite
             pipeState[i] = PIPE_PASS            
         end
+
+        -- for i = 1, pipeCount do
+        --     -- local downPipe = createAtlasSprite("pipe_down")
+        --     -- local upPipe = createAtlasSprite("pipe_up")
+        --     local num = math.floor((i - 1)/2 + 1)
+        --     local pipeSprite = cc.Sprite:create("cloud_"..num.."@2x.png")
+            
+        --     pipeSprite:setPosition(cc.p(- visibleSize.width * 2, -1000.0))
+
+        --     layer:addChild(pipeSprite, 200)
+
+        --     pipes[i] = pipeSprite
+        --     pipeState[i] = PIPE_PASS            
+        -- end
         
     end
 
     local function createPipe()
     	for i = 1, pipeCount do
-            print("iiii:" .. i)
+            
     		if pipes[i]:getPositionX() < -100 then
     			local pipeNode = pipes[i]
                 pipeState[i] = PIPE_NEW
 
     			pipeNode:stopAllActions()
 
-    			local randomHeight = math.random(0,3)
-
-                local posh = pipeNode:getPositionY()
+    			local randomHeight = math.random(1,3)
+                local  posh = randomHeight*170 + 20
     			pipeNode:setPosition(cc.p(visibleSize.width * 1.2, posh))
+                print("posy::"..posh)
     			pipeNode:setTag(randomHeight)
 
     			local move = cc.MoveTo:create(8, cc.p(- visibleSize.width * 2,posh))
@@ -233,7 +256,7 @@ local function createPipes(layer)
 				break
     		end
     	end
-	end
+    end
 
 	initPipe()
 	createPipeFunc = cc.Director:getInstance():getScheduler():scheduleScriptFunc(createPipe, 1.3, false)

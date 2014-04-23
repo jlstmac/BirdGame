@@ -1,10 +1,20 @@
 #include "AppDelegate.h"
 #include "CCLuaEngine.h"
 #include "SimpleAudioEngine.h"
+#include "GKTools.h"
 
 using namespace CocosDenshion;
 
 USING_NS_CC;
+
+static AppDelegate* instance;
+AppDelegate* AppDelegate::getInstance(){
+    CCLOG("getinstance");
+    if (instance == NULL) {
+        instance = static_cast<AppDelegate*>(Application::getInstance());
+    }
+    return instance;
+}
 
 AppDelegate::AppDelegate()
 {
@@ -14,6 +24,7 @@ AppDelegate::~AppDelegate()
 {
     SimpleAudioEngine::end();
 }
+
 
 bool AppDelegate::applicationDidFinishLaunching()
 {
@@ -65,3 +76,9 @@ void AppDelegate::applicationWillEnterForeground()
 
     SimpleAudioEngine::getInstance()->resumeBackgroundMusic();
 }
+
+void AppDelegate::toShowLB(){
+    CCLOG("ap toshow");
+    GKTools::showTheLeaderboard();
+}
+

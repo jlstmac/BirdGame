@@ -60,6 +60,8 @@
 - (void) achievementSubmitted: (GKAchievement*) ach error:(NSError*) error;
 - (void) achievementResetResult: (NSError*) error;
 - (void) mappedPlayerIDToPlayer: (GKPlayer*) player error: (NSError*) error;
+
+-(void) show;
 @end
 
 @interface GameCenterManager : NSObject

@@ -102,6 +102,7 @@
 		E986B08A1902617E00440E7A /* iOSTools.m in Sources */ = {isa = PBXBuildFile; fileRef = E986B0891902617E00440E7A /* iOSTools.m */; };
 		E986B08F1902707200440E7A /* GameCenterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E986B08C1902707200440E7A /* GameCenterManager.m */; };
 		E986B0901902707200440E7A /* TapperController.m in Sources */ = {isa = PBXBuildFile; fileRef = E986B08E1902707200440E7A /* TapperController.m */; };
+		E9DB731B19081D5F003B9CBD /* GKTools.mm in Sources */ = {isa = PBXBuildFile; fileRef = E9DB731919081D5F003B9CBD /* GKTools.mm */; };
 		F293B3CD15EB7BE500256477 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F293B3CC15EB7BE500256477 /* QuartzCore.framework */; };
 		F293B3D115EB7BE500256477 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F293B3D015EB7BE500256477 /* OpenAL.framework */; };
 		F293B3D315EB7BE500256477 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F293B3D215EB7BE500256477 /* AudioToolbox.framework */; };
@@ -281,6 +282,8 @@
 		E986B08D1902707200440E7A /* TapperController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TapperController.h; path = ../Classes/TapperController.h; sourceTree = "<group>"; };
 		E986B08E1902707200440E7A /* TapperController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TapperController.m; path = ../Classes/TapperController.m; sourceTree = "<group>"; };
 		E986B0911903FE2A00440E7A /* AppSpecificValues.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppSpecificValues.h; path = ../Classes/AppSpecificValues.h; sourceTree = "<group>"; };
+		E9DB731919081D5F003B9CBD /* GKTools.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = GKTools.mm; path = ../Classes/GKTools.mm; sourceTree = "<group>"; };
+		E9DB731A19081D5F003B9CBD /* GKTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GKTools.h; path = ../Classes/GKTools.h; sourceTree = "<group>"; };
 		F293B3C815EB7BE500256477 /* Fat Birdie Lite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fat Birdie Lite.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F293B3CC15EB7BE500256477 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		F293B3CE15EB7BE500256477 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -505,6 +508,8 @@
 				E986B0921904048200440E7A /* GameCenter */,
 				F293BB7E15EB831F00256477 /* AppDelegate.cpp */,
 				F293BB7F15EB831F00256477 /* AppDelegate.h */,
+				E9DB731919081D5F003B9CBD /* GKTools.mm */,
+				E9DB731A19081D5F003B9CBD /* GKTools.h */,
 				E986B0881902617E00440E7A /* iOSTools.h */,
 				E986B0891902617E00440E7A /* iOSTools.m */,
 			);
@@ -819,6 +824,7 @@
 				5023812417EBBCAC00990C9B /* main.m in Sources */,
 				E986B08A1902617E00440E7A /* iOSTools.m in Sources */,
 				5023811817EBBCAC00990C9B /* AppController.mm in Sources */,
+				E9DB731B19081D5F003B9CBD /* GKTools.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -28,16 +28,18 @@
 #import "AppDelegate.h"
 
 #import "RootViewController.h"
+#import "GameCenterManager.h"
 #import "iOSTools.h"
-#import "TapperController.h"
 
 @implementation AppController
-@synthesize tcViewController;
+@synthesize gameCenterManager;
+
 #pragma mark -
 #pragma mark Application lifecycle
 
 // cocos2d application instance
 static AppDelegate s_sharedApplication;
+static AppController* it;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
@@ -89,15 +91,22 @@ static AppDelegate s_sharedApplication;
 	adView.requiredContentSizeIdentifiers = [NSSet setWithObjects: ADBannerContentSizeIdentifierPortrait, ADBannerContentSizeIdentifierLandscape, nil];
     
     //LeaderBoard
-//    if ([iOSTools isGameCenterAvailable]) {
-//        [iOSTools authenticateLocalPlayer];
-//    }
+
+	if([GameCenterManager isGameCenterAvailable])
+	{
+		self.gameCenterManager= [[[GameCenterManager alloc] init] autorelease];
+		[self.gameCenterManager setDelegate: self];
+		[self.gameCenterManager authenticateLocalUser];
+        
+//        [self showLeaderboard];
+		NSLog(@"111");
+	}
+	else
+	{NSLog(@"222");
+		[self showAlertWithTitle: @"Game Center Support Required!"
+						 message: @"The current device does not support Game Center, which this sample requires."];
+	}
     
-    tcViewController = [[TapperController alloc] init];
-    [tcViewController.gameCenterManager authenticateLocalUser];
-//    [window addSubview: tcViewController.view];
-    [tcViewController showLeaderboard];
-//    leaderBoard.
     
     return YES;
 }
@@ -172,10 +181,66 @@ static AppDelegate s_sharedApplication;
 }
 -(void)bannerViewActionDidFinish:(ADBannerView *)banner{NSLog(@"did finish");}
 
-- (void)leaderboardViewControllerDidFinish:(GKLeaderboardViewController *)viewController{
+//***Leaderboard
+- (void)leaderboardViewControllerDidFinish:(GKLeaderboardViewController *)viewController
+{
+	[viewController dismissModalViewControllerAnimated: YES];
+//	[viewController release];
+    NSLog(@"leaderboard finish");
+}
+
+//***GameCenterManager
+
+
+- (void) processGameCenterAuth: (NSError*) error{
+
+}
+- (void) scoreReported: (NSError*) error{}
+- (void) reloadScoresComplete: (GKLeaderboard*) leaderBoard error: (NSError*) error{}
+- (void) achievementSubmitted: (GKAchievement*) ach error:(NSError*) error{}
+- (void) achievementResetResult: (NSError*) error{}
+- (void) mappedPlayerIDToPlayer: (GKPlayer*) player error: (NSError*) error{}
+
+- (void) showAlertWithTitle: (NSString*) title message: (NSString*) message
+{
+	UIAlertView* alert= [[[UIAlertView alloc] initWithTitle: title message: message
+                                                   delegate: NULL cancelButtonTitle: @"OK" otherButtonTitles: NULL] autorelease];
+	[alert show];
+	
+}
+
+-(void) show{
+    [self showLeaderboard];
+};
+
+- (void) showLeaderboard;
+{
+    if ([GameCenterManager isGameCenterAvailable]) {
+        GKLeaderboardViewController *leaderboardController = [[GKLeaderboardViewController alloc] init];
+        if (leaderboardController != NULL)
+        {
+            //            leaderboardController.category = self.currentLeaderBoard;
+            leaderboardController.category = @"BestScore";
+            leaderboardController.timeScope = GKLeaderboardTimeScopeAllTime;
+            leaderboardController.leaderboardDelegate = self;
+            [viewController presentModalViewController: leaderboardController animated: YES];
+//            [viewController.view addSubview:leaderboardController.view];
+        }
+    }else{
+    }
     
 }
-@end
 
++ (void) showTheLB{
+
+}
+
++ (AppController*) instance{
+    if (it == nil) {
+        it = [[AppController alloc] init];
+    }
+    return it;
+}
+@end
 
 

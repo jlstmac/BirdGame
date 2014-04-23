@@ -22,16 +22,24 @@
  THE SOFTWARE.
  ****************************************************************************/
 #import <iAd/iAd.h>
+#import <GameKit/GameKit.h>
+#import "GameCenterManager.h"
 
 @class RootViewController;
 @class TapperController;
+@class GameCenterManager;
 
-@interface AppController : NSObject <UIAccelerometerDelegate, UIAlertViewDelegate, UITextFieldDelegate,UIApplicationDelegate, ADBannerViewDelegate> {
+@interface AppController : NSObject <UIAccelerometerDelegate, UIAlertViewDelegate, UITextFieldDelegate,UIApplicationDelegate, ADBannerViewDelegate, GameCenterManagerDelegate, GKLeaderboardViewControllerDelegate> {
     UIWindow *window;
     RootViewController    *viewController;
     ADBannerView *adView;
-    TapperController* tcViewController;
+    GameCenterManager* gameCenterManager;
+    
 }
-@property (nonatomic, retain) TapperController *tcViewController;
+@property (nonatomic, retain) GameCenterManager *gameCenterManager;
+- (void) showLeaderboard;
++ (void) showTheLB;
++ (void) haveNewScore:(int) score;
++ (AppController*) instance;
 @end
 

@@ -2,7 +2,6 @@
 -- Author: GeZiyang
 -- Date: 2014-02-10
 --
-
 -- config
 local flySpeed  = 2.5
 local flyOffset = 5
@@ -244,7 +243,6 @@ end
 
 local clickedButton = nil
 local function checkMenuButton(button, name, point)
-    cclog("checkMenuButton : "..name)
     local buttonSize = getSpriteSize(name)
     local buttonX = button:getPositionX()
     local buttonY = button:getPositionY()
@@ -304,7 +302,8 @@ function onCommonMenuLayerTouchEnded(touch, event)
             cc.Director:getInstance():replaceScene(trans)
             playEffectByName(uiPath)
         elseif clickedButton == g_rankButton then
-
+            print("toShowLB")
+            AppDelegate:getInstance().toShowLB()
         end
 
         clickedButton = nil

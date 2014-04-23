@@ -138,13 +138,28 @@
 
 - (void) authenticateLocalUser
 {NSLog(@"authenticateLocalUser");
-	if([GKLocalPlayer localPlayer].authenticated == NO)
-	{
-		[[GKLocalPlayer localPlayer] authenticateWithCompletionHandler:^(NSError *error) 
-		{
-			[self callDelegateOnMainThread: @selector(processGameCenterAuth:) withArg: NULL error: error];
-		}];
-	}
+//	if([GKLocalPlayer localPlayer].authenticated == NO)
+//	{
+//		[[GKLocalPlayer localPlayer] authenticateWithCompletionHandler:^(NSError *error) 
+//		{
+//			[self callDelegateOnMainThread: @selector(processGameCenterAuth:) withArg: NULL error: error];
+//		}];
+//	}
+    [[GKLocalPlayer localPlayer] authenticateWithCompletionHandler:^(NSError *error){
+        if (error == nil) {
+            //成功处理
+            NSLog(@"成功");
+            NSLog(@"1--alias--.%@",[GKLocalPlayer localPlayer].alias);
+            NSLog(@"2--authenticated--.%d",[GKLocalPlayer localPlayer].authenticated);
+            NSLog(@"3--isFriend--.%d",[GKLocalPlayer localPlayer].isFriend);
+            NSLog(@"4--playerID--.%@",[GKLocalPlayer localPlayer].playerID);
+            NSLog(@"5--underage--.%d",[GKLocalPlayer localPlayer].underage);
+//            [self callDelegate:@selector(show) withArg:NULL error:error];
+        }else {
+            //错误处理
+            NSLog(@"失败  %@",error);
+        }
+    }];
 }
 
 - (void) reloadHighScoresForCategory: (NSString*) category

@@ -33,6 +33,8 @@ THE SOFTWARE.
 #include <ctype.h>
 #include <string.h>
 
+#include "GKTools.h"
+
 #if defined(__GNUC__) && ((__GNUC__ >= 4) || ((__GNUC__ == 3) && (__GNUC_MINOR__ >= 1)))
 #define CC_DEPRECATED_ATTRIBUTE __attribute__((deprecated))
 #elif _MSC_VER >= 1400 //vs 2005 or higher
@@ -68,13 +70,17 @@ public:
      @warning It must be called before the application exit, or a memory leak will be casued.
      */
     static void end();
+    
+    static void showLB(){
+        GKTools::showTheLeaderboard();
+    };
 
 protected:
     SimpleAudioEngine();
     virtual ~SimpleAudioEngine();
 
 public:
-
+    
     /**
      @brief Preload background music
      @param pszFilePath The path of the background music file.

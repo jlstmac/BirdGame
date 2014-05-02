@@ -1,7 +1,6 @@
 #include "AppDelegate.h"
 #include "CCLuaEngine.h"
 #include "SimpleAudioEngine.h"
-#include "GKTools.h"
 
 using namespace CocosDenshion;
 
@@ -54,6 +53,9 @@ bool AppDelegate::applicationDidFinishLaunching()
     auto engine = LuaEngine::getInstance();
     ScriptEngineManager::getInstance()->setScriptEngine(engine);
     
+    //**reister the new Classes
+//    register_all_classes(engine->getLuaStack()->getLuaState());
+    
     //The call was commented because it will lead to ZeroBrane Studio can't find correct context when debugging
     //engine->executeScriptFile("hello.lua");
     engine->executeString("require 'main.lua'");
@@ -77,8 +79,4 @@ void AppDelegate::applicationWillEnterForeground()
     SimpleAudioEngine::getInstance()->resumeBackgroundMusic();
 }
 
-void AppDelegate::toShowLB(){
-    CCLOG("ap toshow");
-    GKTools::showTheLeaderboard();
-}
 

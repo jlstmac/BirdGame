@@ -50,7 +50,6 @@ public:
     
     AppDelegate* getInstance();
 
-    void toShowLB();
 };
 
 #endif  // __APP_DELEGATE_H__

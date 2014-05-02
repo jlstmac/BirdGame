@@ -3,7 +3,7 @@
 #include "SimpleAudioEngine.h"
 #include "tolua_fix.h"
 #include "LuaBasicConversions.h"
-
+//#include "GKTools.h"
 
 
 int lua_cocos2dx_Object_getReferenceCount(lua_State* tolua_S)
@@ -71447,6 +71447,40 @@ int lua_cocos2dx_SimpleAudioEngine_end(lua_State* tolua_S)
 #endif
     return 0;
 }
+//**add
+int lua_cocos2dx_SimpleAudioEngine_showLB(lua_State* tolua_S)
+{
+    int argc = 0;
+    bool ok  = true;
+    
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+    
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertable(tolua_S,1,"cc.SimpleAudioEngine",0,&tolua_err)) goto tolua_lerror;
+#endif
+    
+    argc = lua_gettop(tolua_S) - 1;
+    
+    if (argc == 0)
+    {
+        if(!ok)
+            return 0;
+        CocosDenshion::SimpleAudioEngine::showLB();
+        return 0;
+    }
+    CCLOG("%s has wrong number of arguments: %d, was expecting %d\n ", "end",argc, 0);
+    return 0;
+#if COCOS2D_DEBUG >= 1
+tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_cocos2dx_SimpleAudioEngine_showLB'.",&tolua_err);
+#endif
+    return 0;
+}
+
+
+
 int lua_cocos2dx_SimpleAudioEngine_getInstance(lua_State* tolua_S)
 {
     int argc = 0;
@@ -71532,13 +71566,64 @@ int lua_register_cocos2dx_SimpleAudioEngine(lua_State* tolua_S)
         tolua_function(tolua_S,"unloadEffect",lua_cocos2dx_SimpleAudioEngine_unloadEffect);
         tolua_function(tolua_S,"resumeEffect",lua_cocos2dx_SimpleAudioEngine_resumeEffect);
         tolua_function(tolua_S,"end", lua_cocos2dx_SimpleAudioEngine_end);
+    //*add
+    tolua_function(tolua_S,"end", lua_cocos2dx_SimpleAudioEngine_showLB);
         tolua_function(tolua_S,"getInstance", lua_cocos2dx_SimpleAudioEngine_getInstance);
+    
     tolua_endmodule(tolua_S);
     std::string typeName = typeid(CocosDenshion::SimpleAudioEngine).name();
     g_luaType[typeName] = "cc.SimpleAudioEngine";
     g_typeCast["SimpleAudioEngine"] = "cc.SimpleAudioEngine";
     return 1;
 }
+
+/*add*/
+
+int lua_GKTools_showTheLeaderboard(lua_State* tolua_S)
+{
+    int argc = 0;
+    bool ok  = true;
+    
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+    
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertable(tolua_S,1,"ç",0,&tolua_err)) goto tolua_lerror;
+#endif
+    
+    argc = lua_gettop(tolua_S) - 1;
+    
+    if (argc == 0)
+    {
+        if(!ok)
+            return 0;
+        GKTools::showTheLeaderboard();
+        return 0;
+    }
+    CCLOG("%s has wrong number of arguments: %d, was expecting %d\n ", "end",argc, 0);
+    return 0;
+#if COCOS2D_DEBUG >= 1
+tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_GKTools_showTheLeaderboard'.",&tolua_err);
+#endif
+    return 0;
+}
+
+int lua_register_GKTools(lua_State* tolua_S){
+    tolua_usertype(tolua_S,"GKTools");
+    tolua_cclass(tolua_S,"GKTools","GKTools","",NULL);
+    
+    tolua_beginmodule(tolua_S,"GKTools");
+    tolua_function(tolua_S,"showTheLeaderboard",lua_GKTools_showTheLeaderboard);
+    tolua_endmodule(tolua_S);
+    std::string typeName = std::string("GKTools");
+    g_luaType[typeName] = "GKTools";
+    g_typeCast["GKTools"] = "GKTools";
+    return 1;
+}
+
+
 TOLUA_API int register_all_cocos2dx(lua_State* tolua_S)
 {
 	tolua_open(tolua_S);
@@ -71769,6 +71854,9 @@ TOLUA_API int register_all_cocos2dx(lua_State* tolua_S)
 	lua_register_cocos2dx_TransitionSlideInB(tolua_S);
 	lua_register_cocos2dx_Speed(tolua_S);
 	lua_register_cocos2dx_ShatteredTiles3D(tolua_S);
+    
+    /*add*/
+    lua_register_GKTools(tolua_S);
 
 	tolua_endmodule(tolua_S);
 	return 1;

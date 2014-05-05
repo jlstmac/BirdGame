@@ -10,8 +10,7 @@ extern "C" {
 #endif
 
 int register_all_cocos2dx(lua_State* tolua_S);
-
-
+int register_cocos2dx_SimpleAudioEngine(lua_State* tolua_S);
 
 
 

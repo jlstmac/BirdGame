@@ -29,7 +29,8 @@ local function createStartBackLayer()
 
 	-- play button
 	local playButton = createAtlasSprite("button_play")
-	playButton:setPosition(cc.p(visibleSize.width / 4, visibleSize.height / 2 - 120))
+	-- playButton:setPosition(cc.p(visibleSize.width / 4, visibleSize.height / 2 - 120))
+		playButton:setPosition(cc.p(visibleSize.width / 2, visibleSize.height / 2 - 120))
 	backLayer:addChild(playButton, 1000)
 	-- local menu = cc.Menu:
 
@@ -37,6 +38,8 @@ local function createStartBackLayer()
 	local rankButton = createAtlasSprite("button_score")
 	rankButton:setPosition(cc.p(visibleSize.width * 3 / 4, visibleSize.height / 2 - 120))
 	backLayer:addChild(rankButton, 1000)
+
+	rankButton:setVisible(false)
 
 	-- copy right
 	local spriteCopyright = createAtlasSprite("brand_copyright")

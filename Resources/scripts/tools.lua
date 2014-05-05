@@ -303,6 +303,7 @@ function onCommonMenuLayerTouchEnded(touch, event)
             playEffectByName(uiPath)
         elseif clickedButton == g_rankButton then
             cc.SimpleAudioEngine:getInstance():showLB()
+
         end
 
         clickedButton = nil

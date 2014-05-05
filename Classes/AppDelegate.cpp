@@ -1,7 +1,9 @@
 #include "AppDelegate.h"
 #include "CCLuaEngine.h"
 #include "SimpleAudioEngine.h"
-
+//#include "lua_cocos2dx_auto.hpp"
+#include "luaToolsLoader.h"
+#include "CCNodeLoaderLibrary.h"
 using namespace CocosDenshion;
 
 USING_NS_CC;
@@ -49,12 +51,15 @@ bool AppDelegate::applicationDidFinishLaunching()
     // set FPS. the default value is 1.0/60 if you don't call this
     director->setAnimationInterval(1.0 / 60);
 
+    
+//    cocosbuilder::NodeLoaderLibrary::getInstance()->unregisterNodeLoader("SimpleAudioEngine");
+    cocosbuilder::NodeLoaderLibrary::getInstance()->registerNodeLoader("luaTools", cocos2d::extension::luaToolsLoader::loader());
     // register lua engine
     auto engine = LuaEngine::getInstance();
     ScriptEngineManager::getInstance()->setScriptEngine(engine);
     
     //**reister the new Classes
-//    register_all_classes(engine->getLuaStack()->getLuaState());
+//    register_cocos2dx_SimpleAudioEngine(engine->getLuaStack()->getLuaState());
     
     //The call was commented because it will lead to ZeroBrane Studio can't find correct context when debugging
     //engine->executeScriptFile("hello.lua");

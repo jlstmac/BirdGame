@@ -8,7 +8,8 @@
 #include "CCMap.h"
 
 #include "CCBSequence.h"
-#include "extensions/GUI/CCControlExtension/CCControl.h"
+//#include "/extensions/GUI/CCControlExtension/CCControl.h"
+#include "CCControl.h"
 
 #define CCB_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(T, METHOD) static T * METHOD() { \
     T * ptr = new T(); \

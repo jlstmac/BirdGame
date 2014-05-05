@@ -8199,7 +8199,10 @@
 					"$(inherited)",
 					CC_TARGET_OS_IPHONE,
 				);
-				HEADER_SEARCH_PATHS = /Users/jlstmac/Documents/Dev/BirdGame/Classes;
+				HEADER_SEARCH_PATHS = (
+					/Users/jlstmac/Documents/Dev/BirdGame/Classes,
+					/Users/jlstmac/Documents/Dev/BirdGame/cocos2d/extensions/GUI/CCControlExtension/,
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -8222,7 +8225,10 @@
 					"$(inherited)",
 					CC_TARGET_OS_IPHONE,
 				);
-				HEADER_SEARCH_PATHS = /Users/jlstmac/Documents/Dev/BirdGame/Classes;
+				HEADER_SEARCH_PATHS = (
+					/Users/jlstmac/Documents/Dev/BirdGame/Classes,
+					/Users/jlstmac/Documents/Dev/BirdGame/cocos2d/extensions/GUI/CCControlExtension/,
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -8443,7 +8449,10 @@
 					"$(inherited)",
 					CC_TARGET_OS_IPHONE,
 				);
-				HEADER_SEARCH_PATHS = /Users/jlstmac/Documents/Dev/BirdGame/Classes;
+				HEADER_SEARCH_PATHS = (
+					/Users/jlstmac/Documents/Dev/BirdGame/Classes,
+					/Users/jlstmac/Documents/Dev/BirdGame/cocos2d/extensions/GUI/CCControlExtension/,
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				LIBRARY_SEARCH_PATHS = (
 					"\"$(SRCROOT)/../external/png/prebuilt/ios\"",
@@ -8471,7 +8480,10 @@
 					"$(inherited)",
 					CC_TARGET_OS_IPHONE,
 				);
-				HEADER_SEARCH_PATHS = /Users/jlstmac/Documents/Dev/BirdGame/Classes;
+				HEADER_SEARCH_PATHS = (
+					/Users/jlstmac/Documents/Dev/BirdGame/Classes,
+					/Users/jlstmac/Documents/Dev/BirdGame/cocos2d/extensions/GUI/CCControlExtension/,
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				LIBRARY_SEARCH_PATHS = (
 					"\"$(SRCROOT)/../external/png/prebuilt/ios\"",

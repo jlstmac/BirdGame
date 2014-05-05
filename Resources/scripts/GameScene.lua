@@ -15,7 +15,7 @@ local pipeDistance = 100
 
 local landHeight = 120
 
-local tapV = 390
+local tapV = 600
 local systemGravity = -1200
 --config end
 
@@ -59,6 +59,7 @@ local function showGameOverLayer()
     local playButton = createAtlasSprite("button_play")
     -- local playButton = cc.Sprite:create("button_play")
     local rankButton = createAtlasSprite("button_score")
+    rankButton:setVisible(false)
 
     local function initOverItems()
         -- game over
@@ -85,7 +86,8 @@ local function showGameOverLayer()
         --bottom buttons
 
         -- play button      
-        playButton:setPosition(cc.p(midX / 2, midY - 120))
+        -- playButton:setPosition(cc.p(midX / 2, midY - 120))
+        playButton:setPosition(cc.p(midX, midY - 120)) 
         playButton:setVisible(false)
 
         overLayer:addChild(playButton, 1000)
@@ -98,7 +100,6 @@ local function showGameOverLayer()
         rankButton:setVisible(false)
 
         overLayer:addChild(rankButton, 1000)
-
         g_rankButton = rankButton
     end
 
@@ -146,7 +147,7 @@ local function showGameOverLayer()
 
         local function showBottomButton()
             playButton:setVisible(true)
-            rankButton:setVisible(true)
+            -- rankButton:setVisible(true)
         end
 
         local delay1 = cc.DelayTime:create(1)

@@ -92,20 +92,20 @@ static AppController* it;
     
     //LeaderBoard
 
-	if([GameCenterManager isGameCenterAvailable])
-	{
-		self.gameCenterManager= [[[GameCenterManager alloc] init] autorelease];
-		[self.gameCenterManager setDelegate: self];
-		[self.gameCenterManager authenticateLocalUser];
-        
-//        [self showLeaderboard];
-		NSLog(@"111");
-	}
-	else
-	{NSLog(@"222");
-		[self showAlertWithTitle: @"Game Center Support Required!"
-						 message: @"The current device does not support Game Center, which this sample requires."];
-	}
+//	if([GameCenterManager isGameCenterAvailable])
+//	{
+//		self.gameCenterManager= [[[GameCenterManager alloc] init] autorelease];
+//		[self.gameCenterManager setDelegate: self];
+//		[self.gameCenterManager authenticateLocalUser];
+//        
+////        [self showLeaderboard];
+//		NSLog(@"111");
+//	}
+//	else
+//	{NSLog(@"222");
+//		[self showAlertWithTitle: @"Game Center Support Required!"
+//						 message: @"The current device does not support Game Center, which this sample requires."];
+//	}
     
     
     return YES;

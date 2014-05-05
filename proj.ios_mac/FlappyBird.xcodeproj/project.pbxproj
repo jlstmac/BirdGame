@@ -95,6 +95,8 @@
 		E91ECB4418F8FFEB004D6956 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E91ECB4318F8FFEB004D6956 /* iAd.framework */; };
 		E91ECB5918F96AAD004D6956 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E91ECB5818F96AAD004D6956 /* GameKit.framework */; };
 		E91ECB5B18F96D52004D6956 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E91ECB5A18F96D52004D6956 /* UIKit.framework */; };
+		E93B48B61913814E00097B3C /* luaTools.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E93B48B41913814E00097B3C /* luaTools.cpp */; };
+		E93B48B91913820200097B3C /* luaToolsLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E93B48B71913820200097B3C /* luaToolsLoader.cpp */; };
 		E943EB3F18CCB2F1006C57CC /* iPhoneHD in Resources */ = {isa = PBXBuildFile; fileRef = E943EB3E18CCB2F1006C57CC /* iPhoneHD */; };
 		E943EB4318CCB546006C57CC /* iPad in Resources */ = {isa = PBXBuildFile; fileRef = E943EB4018CCB546006C57CC /* iPad */; };
 		E943EB4418CCB546006C57CC /* iPadHD in Resources */ = {isa = PBXBuildFile; fileRef = E943EB4118CCB546006C57CC /* iPadHD */; };
@@ -102,6 +104,13 @@
 		E986B08A1902617E00440E7A /* iOSTools.m in Sources */ = {isa = PBXBuildFile; fileRef = E986B0891902617E00440E7A /* iOSTools.m */; };
 		E986B08F1902707200440E7A /* GameCenterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E986B08C1902707200440E7A /* GameCenterManager.m */; };
 		E986B0901902707200440E7A /* TapperController.m in Sources */ = {isa = PBXBuildFile; fileRef = E986B08E1902707200440E7A /* TapperController.m */; };
+		E9B1B394191536C60004BF7B /* icon-40.png in Resources */ = {isa = PBXBuildFile; fileRef = E9B1B38D191536C60004BF7B /* icon-40.png */; };
+		E9B1B395191536C60004BF7B /* icon-50.png in Resources */ = {isa = PBXBuildFile; fileRef = E9B1B38E191536C60004BF7B /* icon-50.png */; };
+		E9B1B396191536C60004BF7B /* icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = E9B1B38F191536C60004BF7B /* icon-72.png */; };
+		E9B1B397191536C60004BF7B /* icon-76.png in Resources */ = {isa = PBXBuildFile; fileRef = E9B1B390191536C60004BF7B /* icon-76.png */; };
+		E9B1B398191536C60004BF7B /* icon-100.png in Resources */ = {isa = PBXBuildFile; fileRef = E9B1B391191536C60004BF7B /* icon-100.png */; };
+		E9B1B399191536C60004BF7B /* icon-144.png in Resources */ = {isa = PBXBuildFile; fileRef = E9B1B392191536C60004BF7B /* icon-144.png */; };
+		E9B1B39A191536C60004BF7B /* icon-152.png in Resources */ = {isa = PBXBuildFile; fileRef = E9B1B393191536C60004BF7B /* icon-152.png */; };
 		E9DB731B19081D5F003B9CBD /* GKTools.mm in Sources */ = {isa = PBXBuildFile; fileRef = E9DB731919081D5F003B9CBD /* GKTools.mm */; };
 		F293B3CD15EB7BE500256477 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F293B3CC15EB7BE500256477 /* QuartzCore.framework */; };
 		F293B3D115EB7BE500256477 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F293B3D015EB7BE500256477 /* OpenAL.framework */; };
@@ -271,6 +280,10 @@
 		E91ECB4318F8FFEB004D6956 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/iAd.framework; sourceTree = DEVELOPER_DIR; };
 		E91ECB5818F96AAD004D6956 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/GameKit.framework; sourceTree = DEVELOPER_DIR; };
 		E91ECB5A18F96D52004D6956 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		E93B48B41913814E00097B3C /* luaTools.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = luaTools.cpp; path = ../Classes/luaTools.cpp; sourceTree = "<group>"; };
+		E93B48B51913814E00097B3C /* luaTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = luaTools.h; path = ../Classes/luaTools.h; sourceTree = "<group>"; };
+		E93B48B71913820200097B3C /* luaToolsLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = luaToolsLoader.cpp; path = ../Classes/luaToolsLoader.cpp; sourceTree = "<group>"; };
+		E93B48B81913820200097B3C /* luaToolsLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = luaToolsLoader.h; path = ../Classes/luaToolsLoader.h; sourceTree = "<group>"; };
 		E943EB3E18CCB2F1006C57CC /* iPhoneHD */ = {isa = PBXFileReference; lastKnownFileType = folder; name = iPhoneHD; path = ../Resources/iPhoneHD; sourceTree = "<group>"; };
 		E943EB4018CCB546006C57CC /* iPad */ = {isa = PBXFileReference; lastKnownFileType = folder; name = iPad; path = ../Resources/iPad; sourceTree = "<group>"; };
 		E943EB4118CCB546006C57CC /* iPadHD */ = {isa = PBXFileReference; lastKnownFileType = folder; name = iPadHD; path = ../Resources/iPadHD; sourceTree = "<group>"; };
@@ -282,6 +295,13 @@
 		E986B08D1902707200440E7A /* TapperController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TapperController.h; path = ../Classes/TapperController.h; sourceTree = "<group>"; };
 		E986B08E1902707200440E7A /* TapperController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TapperController.m; path = ../Classes/TapperController.m; sourceTree = "<group>"; };
 		E986B0911903FE2A00440E7A /* AppSpecificValues.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppSpecificValues.h; path = ../Classes/AppSpecificValues.h; sourceTree = "<group>"; };
+		E9B1B38D191536C60004BF7B /* icon-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-40.png"; sourceTree = "<group>"; };
+		E9B1B38E191536C60004BF7B /* icon-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-50.png"; sourceTree = "<group>"; };
+		E9B1B38F191536C60004BF7B /* icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-72.png"; sourceTree = "<group>"; };
+		E9B1B390191536C60004BF7B /* icon-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-76.png"; sourceTree = "<group>"; };
+		E9B1B391191536C60004BF7B /* icon-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-100.png"; sourceTree = "<group>"; };
+		E9B1B392191536C60004BF7B /* icon-144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-144.png"; sourceTree = "<group>"; };
+		E9B1B393191536C60004BF7B /* icon-152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-152.png"; sourceTree = "<group>"; };
 		E9DB731919081D5F003B9CBD /* GKTools.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = GKTools.mm; path = ../Classes/GKTools.mm; sourceTree = "<group>"; };
 		E9DB731A19081D5F003B9CBD /* GKTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GKTools.h; path = ../Classes/GKTools.h; sourceTree = "<group>"; };
 		F293B3C815EB7BE500256477 /* Fat Birdie Lite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fat Birdie Lite.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -432,6 +452,13 @@
 				5023810C17EBBCAC00990C9B /* Icon-114.png */,
 				5023810D17EBBCAC00990C9B /* Icon-120.png */,
 				5023811017EBBCAC00990C9B /* Icon-57.png */,
+				E9B1B38D191536C60004BF7B /* icon-40.png */,
+				E9B1B38E191536C60004BF7B /* icon-50.png */,
+				E9B1B38F191536C60004BF7B /* icon-72.png */,
+				E9B1B390191536C60004BF7B /* icon-76.png */,
+				E9B1B391191536C60004BF7B /* icon-100.png */,
+				E9B1B392191536C60004BF7B /* icon-144.png */,
+				E9B1B393191536C60004BF7B /* icon-152.png */,
 			);
 			name = Icons;
 			sourceTree = "<group>";
@@ -508,6 +535,10 @@
 				E986B0921904048200440E7A /* GameCenter */,
 				F293BB7E15EB831F00256477 /* AppDelegate.cpp */,
 				F293BB7F15EB831F00256477 /* AppDelegate.h */,
+				E93B48B41913814E00097B3C /* luaTools.cpp */,
+				E93B48B51913814E00097B3C /* luaTools.h */,
+				E93B48B71913820200097B3C /* luaToolsLoader.cpp */,
+				E93B48B81913820200097B3C /* luaToolsLoader.h */,
 				E9DB731919081D5F003B9CBD /* GKTools.mm */,
 				E9DB731A19081D5F003B9CBD /* GKTools.h */,
 				E986B0881902617E00440E7A /* iOSTools.h */,
@@ -747,23 +778,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				E943EB4318CCB546006C57CC /* iPad in Resources */,
+				E9B1B397191536C60004BF7B /* icon-76.png in Resources */,
+				E9B1B39A191536C60004BF7B /* icon-152.png in Resources */,
 				E943EB4418CCB546006C57CC /* iPadHD in Resources */,
 				E943EB4518CCB546006C57CC /* iPhone in Resources */,
 				E943EB3F18CCB2F1006C57CC /* iPhoneHD in Resources */,
 				15A8A46E1834C6AD00142BE0 /* DeprecatedClass.lua in Resources */,
+				E9B1B395191536C60004BF7B /* icon-50.png in Resources */,
 				15A8A4491834C64F00142BE0 /* Icon-114.png in Resources */,
+				E9B1B399191536C60004BF7B /* icon-144.png in Resources */,
 				5023811D17EBBCAC00990C9B /* Icon-120.png in Resources */,
 				15A8A47E1834C6AD00142BE0 /* OpenglConstants.lua in Resources */,
 				15A8A4781834C6AD00142BE0 /* luaj.lua in Resources */,
 				15A8A47C1834C6AD00142BE0 /* Opengl.lua in Resources */,
+				E9B1B398191536C60004BF7B /* icon-100.png in Resources */,
 				15A8A4741834C6AD00142BE0 /* DrawPrimitives.lua in Resources */,
 				5023811B17EBBCAC00990C9B /* Default@2x.png in Resources */,
 				15A8A4681834C6AD00142BE0 /* Cocos2d.lua in Resources */,
 				5091733617ECE17A00D62437 /* Icon-29.png in Resources */,
 				15A8A4801834C6AD00142BE0 /* StudioConstants.lua in Resources */,
 				5023811917EBBCAC00990C9B /* Default-568h@2x.png in Resources */,
+				E9B1B394191536C60004BF7B /* icon-40.png in Resources */,
 				1AC3623516D47C5C000847F2 /* fonts in Resources */,
 				A55DD5DC18AB752800D0F4D3 /* main.lua in Resources */,
+				E9B1B396191536C60004BF7B /* icon-72.png in Resources */,
 				15A8A4721834C6AD00142BE0 /* DeprecatedOpenglEnum.lua in Resources */,
 				15A8A4701834C6AD00142BE0 /* DeprecatedEnum.lua in Resources */,
 				15A8A46A1834C6AD00142BE0 /* Cocos2dConstants.lua in Resources */,
@@ -821,10 +859,12 @@
 				5023812517EBBCAC00990C9B /* RootViewController.mm in Sources */,
 				F293BB9C15EB831F00256477 /* AppDelegate.cpp in Sources */,
 				E986B08F1902707200440E7A /* GameCenterManager.m in Sources */,
+				E93B48B61913814E00097B3C /* luaTools.cpp in Sources */,
 				5023812417EBBCAC00990C9B /* main.m in Sources */,
 				E986B08A1902617E00440E7A /* iOSTools.m in Sources */,
 				5023811817EBBCAC00990C9B /* AppController.mm in Sources */,
 				E9DB731B19081D5F003B9CBD /* GKTools.mm in Sources */,
+				E93B48B91913820200097B3C /* luaToolsLoader.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -889,7 +929,7 @@
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Jiang LinShan (453PQT5LKA)";
+				CODE_SIGN_IDENTITY = "com.apple.ubiquity.peer-uuid.B5F72349-6A74-4DA3-9D76-8CC76026480B";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -916,11 +956,13 @@
 					"$(SRCROOT)/../../cocos2dx/platform/ios",
 					"$(SRCROOT)/../../cocos2dx/include",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "5A1F8565-D95A-403B-8763-9D8EA84D6CD8";
+				PROVISIONING_PROFILE = "5DB52CAC-7E93-4FFD-8C4C-80F9676D0E6F";
 				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = YES;
+				SDKROOT = iphoneos;
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -929,7 +971,7 @@
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Jiang LinShan (453PQT5LKA)";
+				CODE_SIGN_IDENTITY = "com.apple.ubiquity.peer-uuid.B5F72349-6A74-4DA3-9D76-8CC76026480B";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					NDEBUG,
@@ -952,12 +994,14 @@
 					"$(SRCROOT)/../../cocos2dx/platform/ios",
 					"$(SRCROOT)/../../cocos2dx/include",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "5A1F8565-D95A-403B-8763-9D8EA84D6CD8";
+				PROVISIONING_PROFILE = "5DB52CAC-7E93-4FFD-8C4C-80F9676D0E6F";
 				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = YES;
+				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Release;
 		};
@@ -965,8 +1009,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Jiang LinShan (453PQT5LKA)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jiang LinShan (453PQT5LKA)";
+				CODE_SIGN_IDENTITY = "com.apple.ubiquity.peer-uuid.B5F72349-6A74-4DA3-9D76-8CC76026480B";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "com.apple.ubiquity.peer-uuid.B5F72349-6A74-4DA3-9D76-8CC76026480B";
 				COMPRESS_PNG_FILES = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -979,16 +1023,22 @@
 					CC_TARGET_OS_IPHONE,
 					"$(inherited)",
 				);
-				HEADER_SEARCH_PATHS = "";
+				HEADER_SEARCH_PATHS = (
+					/Users/jlstmac/Documents/Dev/BirdGame/cocos2d/extensions/GUI/CCControlExtension/,
+					"/Users/jlstmac/Documents/Dev/BirdGame/cocos2d/cocos/scripting/auto-generated/lua-bindings",
+					"/Users/jlstmac/Documents/Dev/BirdGame/cocos2d/cocos/editor-support/cocosbuilder",
+					/Users/jlstmac/Documents/Dev/BirdGame/cocos2d/extensions/GUI/CCControlExtension,
+				);
 				INFOPLIST_FILE = ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_NAME = "Fat Birdie Lite";
-				PROVISIONING_PROFILE = "5A1F8565-D95A-403B-8763-9D8EA84D6CD8";
+				PROVISIONING_PROFILE = "5DB52CAC-7E93-4FFD-8C4C-80F9676D0E6F";
 				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../cocos2d/cocos $(SRCROOT)/../cocos2d/cocos/base $(SRCROOT)/../cocos2d/cocos/2d $(SRCROOT)/../cocos2d/cocos/physics $(SRCROOT)/../cocos2d/cocos/math/kazmath/include $(SRCROOT)/../cocos2d/cocos/2d/platform/ios $(SRCROOT)/../cocos2d/cocos/audio/include $(SRCROOT)/../cocos2d/cocos/editor-support $(SRCROOT)/../cocos2d/cocos/gui $(SRCROOT)/../cocos2d/external/chipmunk/include/chipmunk $(SRCROOT)/../cocos2d/external $(SRCROOT)/../cocos2d/cocos/scripting/lua/bindings $(SRCROOT)/../cocos2d/external/lua/luajit/include $(SRCROOT)/../cocos2d/external/lua/tolua";
+				VALID_ARCHS = "armv7s armv7";
 			};
 			name = Debug;
 		};
@@ -996,8 +1046,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Jiang LinShan (453PQT5LKA)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jiang LinShan (453PQT5LKA)";
+				CODE_SIGN_IDENTITY = "com.apple.ubiquity.peer-uuid.B5F72349-6A74-4DA3-9D76-8CC76026480B";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "com.apple.ubiquity.peer-uuid.B5F72349-6A74-4DA3-9D76-8CC76026480B";
 				COMPRESS_PNG_FILES = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1009,16 +1059,22 @@
 					CC_TARGET_OS_IPHONE,
 					"$(inherited)",
 				);
-				HEADER_SEARCH_PATHS = "";
+				HEADER_SEARCH_PATHS = (
+					/Users/jlstmac/Documents/Dev/BirdGame/cocos2d/extensions/GUI/CCControlExtension/,
+					"/Users/jlstmac/Documents/Dev/BirdGame/cocos2d/cocos/scripting/auto-generated/lua-bindings",
+					"/Users/jlstmac/Documents/Dev/BirdGame/cocos2d/cocos/editor-support/cocosbuilder",
+					/Users/jlstmac/Documents/Dev/BirdGame/cocos2d/extensions/GUI/CCControlExtension,
+				);
 				INFOPLIST_FILE = ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_NAME = "Fat Birdie Lite";
-				PROVISIONING_PROFILE = "5A1F8565-D95A-403B-8763-9D8EA84D6CD8";
+				PROVISIONING_PROFILE = "5DB52CAC-7E93-4FFD-8C4C-80F9676D0E6F";
 				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../cocos2d/cocos $(SRCROOT)/../cocos2d/cocos/base $(SRCROOT)/../cocos2d/cocos/2d $(SRCROOT)/../cocos2d/cocos/physics $(SRCROOT)/../cocos2d/cocos/math/kazmath/include $(SRCROOT)/../cocos2d/cocos/2d/platform/ios $(SRCROOT)/../cocos2d/cocos/audio/include $(SRCROOT)/../cocos2d/cocos/editor-support $(SRCROOT)/../cocos2d/cocos/gui $(SRCROOT)/../cocos2d/external/chipmunk/include/chipmunk $(SRCROOT)/../cocos2d/external $(SRCROOT)/../cocos2d/cocos/scripting/lua/bindings $(SRCROOT)/../cocos2d/external/lua/luajit/include $(SRCROOT)/../cocos2d/external/lua/tolua";
+				VALID_ARCHS = "armv7s armv7";
 			};
 			name = Release;
 		};

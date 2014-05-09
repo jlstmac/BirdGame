@@ -30,6 +30,7 @@
 #import "RootViewController.h"
 #import "GameCenterManager.h"
 #import "iOSTools.h"
+#import "Appirater/Appirater.h"
 
 @implementation AppController
 @synthesize gameCenterManager;
@@ -86,7 +87,6 @@ static AppController* it;
 	adView.currentContentSizeIdentifier = ADBannerContentSizeIdentifierLandscape;
 	[viewController.view addSubview:adView];
 	adView.delegate = self;
-	adView.hidden = YES;
     
 	adView.requiredContentSizeIdentifiers = [NSSet setWithObjects: ADBannerContentSizeIdentifierPortrait, ADBannerContentSizeIdentifierLandscape, nil];
     
@@ -124,6 +124,10 @@ static AppController* it;
     /*
      Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
      */
+    
+    [Appirater appLaunched];
+    NSLog(@"applanched");
+    
     cocos2d::Director::getInstance()->resume();
 }
 
@@ -166,27 +170,22 @@ static AppController* it;
 }
 
 //***ADView
--(void)bannerViewWillLoadAd:(ADBannerView *)banner{NSLog(@"vill load");}
+-(void)bannerViewWillLoadAd:(ADBannerView *)banner{}
 -(void)bannerViewDidLoadAd:(ADBannerView *)banner{
-    NSLog(@"%d",adView.bannerLoaded);
 	adView.hidden = NO;
-	NSLog(@"did load");
 }
 -(void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error{
-    NSLog(@"error:%@",error);
 }
 -(BOOL)bannerViewActionShouldBegin:(ADBannerView *)banner willLeaveApplication:(BOOL)willLeave{
-    NSLog(@"should begin");
 	return YES;
 }
--(void)bannerViewActionDidFinish:(ADBannerView *)banner{NSLog(@"did finish");}
+-(void)bannerViewActionDidFinish:(ADBannerView *)banner{}
 
 //***Leaderboard
 - (void)leaderboardViewControllerDidFinish:(GKLeaderboardViewController *)viewController
 {
 	[viewController dismissModalViewControllerAnimated: YES];
 //	[viewController release];
-    NSLog(@"leaderboard finish");
 }
 
 //***GameCenterManager

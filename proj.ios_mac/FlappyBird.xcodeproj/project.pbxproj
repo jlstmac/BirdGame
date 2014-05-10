@@ -98,7 +98,6 @@
 		E93AED32191D09E4001B2199 /* Appirater.m in Sources */ = {isa = PBXBuildFile; fileRef = E93AED31191D09E4001B2199 /* Appirater.m */; };
 		E93AED34191D0C90001B2199 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E93AED33191D0C90001B2199 /* SystemConfiguration.framework */; };
 		E93AED36191D1181001B2199 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E93AED35191D1181001B2199 /* CFNetwork.framework */; };
-		E93AED38191D11C7001B2199 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E93AED37191D11C7001B2199 /* StoreKit.framework */; };
 		E93B48B61913814E00097B3C /* luaTools.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E93B48B41913814E00097B3C /* luaTools.cpp */; };
 		E93B48B91913820200097B3C /* luaToolsLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E93B48B71913820200097B3C /* luaToolsLoader.cpp */; };
 		E943EB3F18CCB2F1006C57CC /* iPhoneHD in Resources */ = {isa = PBXBuildFile; fileRef = E943EB3E18CCB2F1006C57CC /* iPhoneHD */; };
@@ -288,7 +287,6 @@
 		E93AED31191D09E4001B2199 /* Appirater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Appirater.m; sourceTree = "<group>"; };
 		E93AED33191D0C90001B2199 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		E93AED35191D1181001B2199 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
-		E93AED37191D11C7001B2199 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		E93B48B41913814E00097B3C /* luaTools.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = luaTools.cpp; path = ../Classes/luaTools.cpp; sourceTree = "<group>"; };
 		E93B48B51913814E00097B3C /* luaTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = luaTools.h; path = ../Classes/luaTools.h; sourceTree = "<group>"; };
 		E93B48B71913820200097B3C /* luaToolsLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = luaToolsLoader.cpp; path = ../Classes/luaToolsLoader.cpp; sourceTree = "<group>"; };
@@ -354,7 +352,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E93AED38191D11C7001B2199 /* StoreKit.framework in Frameworks */,
 				E93AED36191D1181001B2199 /* CFNetwork.framework in Frameworks */,
 				E93AED34191D0C90001B2199 /* SystemConfiguration.framework in Frameworks */,
 				E91ECB5B18F96D52004D6956 /* UIKit.framework in Frameworks */,
@@ -527,7 +524,6 @@
 		F293B3CB15EB7BE500256477 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E93AED37191D11C7001B2199 /* StoreKit.framework */,
 				E93AED35191D1181001B2199 /* CFNetwork.framework */,
 				E93AED33191D0C90001B2199 /* SystemConfiguration.framework */,
 				E91ECB5A18F96D52004D6956 /* UIKit.framework */,
@@ -636,6 +632,9 @@
 						SystemCapabilities = {
 							com.apple.GameCenter = {
 								enabled = 1;
+							};
+							com.apple.InAppPurchase = {
+								enabled = 0;
 							};
 						};
 					};
@@ -1059,7 +1058,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_NAME = "Fat Birdie Lite";
-				PROVISIONING_PROFILE = "DEDB8DE1-0C27-408D-939F-D04DA6B1F3CF";
+				PROVISIONING_PROFILE = "07C7EC71-5953-47AE-BE61-8C74591D1E2F";
 				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1095,7 +1094,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_NAME = "Fat Birdie Lite";
-				PROVISIONING_PROFILE = "DEDB8DE1-0C27-408D-939F-D04DA6B1F3CF";
+				PROVISIONING_PROFILE = "07C7EC71-5953-47AE-BE61-8C74591D1E2F";
 				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
